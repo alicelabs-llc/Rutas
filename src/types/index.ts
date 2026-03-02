@@ -117,7 +117,7 @@ export interface PaymentMethod {
   isDefault: boolean;
 }
 
-export interface PaymentStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'refunded';
+export type PaymentStatus = 'pending' | 'processing' | 'completed' | 'failed' | 'refunded';
 
 export interface Payment {
   id: string;
