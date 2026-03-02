@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --amazon: #00A86B;
+  --amazon-dark: #007A4D;
+  --amazon-light: #00C77B;
+  --sunset: #FF6B35;
+  --dark-950: #050505;
+  --dark-900: #0A0A0A;
+  --dark-800: #121212;
+  --dark-700: #1E1E1E;
+  --dark-600: #252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: #0A0A0A;
+  color: #FFFFFF;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3D3D3D;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4D4D4D;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient Animations */
+.gradient-amazon {
+  background: linear-gradient(135deg, #00A86B 0%, #00C77B 100%);
+}
+
+.gradient-sunset {
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8D66 100%);
+}
+
+/* Pulse Ring Animation */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+/* Map Container Style */
+.map-container {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Button Hover Effects */
+.btn-primary {
+  @apply bg-amazon-500 hover:bg-amazon-600 text-white font-semibold 
+         transition-all duration-300 shadow-lg shadow-amazon-500/25
+         hover:shadow-amazon-500/40 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-dark-700 hover:bg-dark-600 text-white font-semibold
+         border border-dark-500 hover:border-dark-400
+         transition-all duration-300;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-dark-700/80 backdrop-blur-xl border border-dark-500/50 
+         rounded-2xl p-4 transition-all duration-300;
+}
+
+.card-elevated {
+  @apply bg-dark-600/90 backdrop-blur-xl border border-dark-400/30 
+         rounded-2xl p-4 shadow-2xl;
+}
+
+/* Input Styles */
+.input {
+  @apply bg-dark-800 border border-dark-500 rounded-xl px-4 py-3 
+         text-white placeholder:text-dark-400
+         focus:outline-none focus:ring-2 focus:ring-amazon-500 focus:border-transparent
+         transition-all duration-200;
+}
+
+/* Bottom Sheet */
+.bottom-sheet {
+  @apply fixed inset-x-0 bottom-0 bg-dark-800 
+         rounded-t-[2rem] border-t border-dark-500
+         transform transition-transform duration-300 ease-out;
+}
+
+.bottom-sheet-handle {
+  @apply w-12 h-1.5 bg-dark-400 rounded-full mx-auto mt-3 mb-2;
+}
+
+/* Vehicle Card Animation */
+@keyframes vehicle-arrive {
+  0% { transform: translateX(100px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.vehicle-arriving {
+  animation: vehicle-arrive 0.5s ease-out forwards;
+}
+
+/* Loading Spinner */
+.spinner {
+  @apply w-8 h-8 border-2 border-dark-600 border-t-amazon-500 rounded-full;
+}
+
+/* Status Indicators */
+.status-online {
+  @apply w-3 h-3 bg-green-500 rounded-full animate-pulse;
+}
+
+.status-offline {
+  @apply w-3 h-3 bg-gray-500 rounded-full;
+}
+
+.status-busy {
+  @apply w-3 h-3 bg-yellow-500 rounded-full animate-pulse;
+}
