@@ -103,7 +103,7 @@ export const translations: Record<string, TranslationStrings> = {
       bus: 'BusOriente', busDesc: 'Public transport', perPerson: 'per person', available: 'available', arriving: 'arriving'
     },
     ride: {
-      searching: 'Looking for driver...', driverFound:', driverEnRoute 'Driver found!: 'Driver on the way',
+      searching: 'Looking for driver...', driverFound: 'Driver found!', driverEnRoute: 'Driver on the way',
       driverArrived: 'Driver arrived', inProgress: 'Ride in progress', completed: 'Ride completed', cancelled: 'Ride cancelled',
       estimate: 'Estimated price', finalPrice: 'Final price', distance: 'Distance', duration: 'Duration',
       minutes: 'minutes', kilometers: 'km', confirmRide: 'Confirm ride', cancelRide: 'Cancel',
